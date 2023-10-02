@@ -5,8 +5,8 @@ import TransportWebHID from "@ledgerhq/hw-transport-webhid";
 import getAppAndVersion from "@ledgerhq/live-common/lib/hw/getAppAndVersion";
 import getDeviceInfo from "@ledgerhq/live-common/lib/hw/getDeviceInfo";
 import openApp from "@ledgerhq/live-common/lib/hw/openApp";
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as ledger from "@shapeshiftoss/hdwallet-ledger";
+import * as core from "@sudophunk/hdwallet-core";
+import * as ledger from "@sudophunk/hdwallet-ledger";
 import {
   LedgerResponse,
   LedgerTransportCoinType,

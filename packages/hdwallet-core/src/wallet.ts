@@ -8,6 +8,7 @@ import { DebugLinkWallet } from "./debuglink";
 import { EosWallet, EosWalletInfo } from "./eos";
 import { ETHWallet, ETHWalletInfo } from "./ethereum";
 import { FioWallet, FioWalletInfo } from "./fio";
+import { HighburyWallet, HighburyWalletInfo } from "./highbury";
 import { KavaWallet, KavaWalletInfo } from "./kava";
 import { OsmosisWallet, OsmosisWalletInfo } from "./osmosis";
 import { RippleWallet, RippleWalletInfo } from "./ripple";
@@ -218,6 +219,14 @@ export function supportsKava(wallet: HDWallet): wallet is KavaWallet {
 
 export function infoKava(info: HDWalletInfo): info is KavaWalletInfo {
   return isObject(info) && (info as any)._supportsKavaInfo;
+}
+
+export function supportsHighbury(wallet: HDWallet): wallet is HighburyWallet {
+  return isObject(wallet) && (wallet as any)._supportsHighbury;
+}
+
+export function infoHighbury(info: HDWalletInfo): info is HighburyWalletInfo {
+  return isObject(info) && (info as any)._supportsHighburyInfo;
 }
 
 export function supportsRipple(wallet: HDWallet): wallet is RippleWallet {

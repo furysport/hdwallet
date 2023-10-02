@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 
 import { Node } from "./crypto/isolation/engines/default/bip32";
 import { fromB64ToArray } from "./crypto/utils";
@@ -95,6 +95,10 @@ describe("NativeHDWalletInfo", () => {
       {
         msg: { coin: "kava", path: [44 + 0x80000000, 459 + 0x80000000, 0 + 0x80000000, 0, 0] },
         out: { coin: "Kava", verbose: "Kava Account #0", isKnown: true },
+      },
+      {
+        msg: { coin: "fury", path: [44 + 0x80000000, 459 + 0x80000000, 0 + 0x80000000, 0, 0] },
+        out: { coin: "Fury", verbose: "Highbury Account #0", isKnown: true },
       },
       {
         msg: { coin: "Osmo", path: [44 + 0x80000000, 118 + 0x80000000, 0 + 0x80000000, 0, 0] },
@@ -281,6 +285,32 @@ describe("NativeHDWallet", () => {
       ).toStrictEqual("cosmos15cenya0tr7nm3tz2wn3h3zwkht2rxrq7q7h3dj");
     });
 
+    it("should generate valid Cosmos-SDK addresses when initialized with a non-root node", async () => {
+      /** NOTE: Private key and chain code for node at depth 2 was generated
+       * using 'alcohol' 'woman' 'abuse' seed.
+       */
+      const PRIVATE_KEY_DEPTH_2 = "dbSElgfG40sz9QXOfAdw4CStHymWOj76YwCP/7J7gfg=";
+      const CHAIN_CODE_DEPTH_2 = "pBbxxP1ydHOWjGXtMOeeCMqvtiVpJlM0OQIJS3gsUcY=";
+
+      const node = await Node.create(
+        fromB64ToArray(PRIVATE_KEY_DEPTH_2),
+        fromB64ToArray(CHAIN_CODE_DEPTH_2),
+        "m/44'/459'"
+      );
+      const wallet = native.create({ deviceId: "native", masterKey: node });
+      expect(await wallet.isInitialized()).toBe(false);
+      expect(await wallet.isLocked()).toBe(false);
+      await wallet.loadDevice({ masterKey: node });
+      expect(await wallet.initialize()).toBe(true);
+      expect(await wallet.isInitialized()).toBe(true);
+      expect(await wallet.isLocked()).toBe(false);
+      expect(
+        await wallet.cosmosGetAddress({
+          addressNList: [44 + 0x80000000, 459 + 0x80000000, 0 + 0x80000000, 0, 0],
+        })
+      ).toStrictEqual("cosmos15cenya0tr7nm3tz2wn3h3zwkht2rxrq7q7h3dj");
+    });
+
     it("should generate valid EVM addresses when initialized with a non-root node", async () => {
       /** NOTE: Private key and chain code for node at depth 2 was generated
        * using 'alcohol' 'woman' 'abuse' seed.
@@ -350,6 +380,15 @@ describe("NativeHDWallet", () => {
             {
               coin: "bitcoin",
               addressNList: [44 + 0x80000000, 118 + 0x80000000, 0 + 0x80000000, 0, 0],
+              curve: "secp256k1",
+            },
+          ],
+        },
+        {
+          in: [
+            {
+              coin: "bitcoin",
+              addressNList: [44 + 0x80000000, 459 + 0x80000000, 0 + 0x80000000, 0, 0],
               curve: "secp256k1",
             },
           ],

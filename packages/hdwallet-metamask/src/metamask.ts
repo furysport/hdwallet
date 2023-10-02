@@ -1,5 +1,5 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import { AddEthereumChainParameter } from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
+import { AddEthereumChainParameter } from "@sudophunk/hdwallet-core";
 import { ethErrors, serializeError } from "eth-rpc-errors";
 import _ from "lodash";
 
@@ -19,6 +19,7 @@ export class MetaMaskHDWalletInfo implements core.HDWalletInfo, core.ETHWalletIn
   readonly _supportsFioInfo = false;
   readonly _supportsThorchainInfo = false;
   readonly _supportsSecretInfo = false;
+  readonly _supportsHighburyInfo = false;
   readonly _supportsKavaInfo = false;
   readonly _supportsTerraInfo = false;
 
@@ -127,6 +128,8 @@ export class MetaMaskHDWallet implements core.HDWallet, core.ETHWallet {
   readonly _supportsSecret = false;
   readonly _supportsKava = false;
   readonly _supportsKavaInfo = false;
+  readonly _supportsHighbury = false;
+  readonly _supportsHighburyInfo = false;
   readonly _supportsTerra = false;
   readonly _supportsTerraInfo = false;
 

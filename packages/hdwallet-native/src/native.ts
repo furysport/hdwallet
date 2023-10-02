@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 import * as bip39 from "bip39";
 import * as eventemitter2 from "eventemitter2";
 import isObject from "lodash/isObject";
@@ -14,6 +14,7 @@ import { MixinNativeFioWallet, MixinNativeFioWalletInfo } from "./fio";
 import { MixinNativeKavaWallet, MixinNativeKavaWalletInfo } from "./kava";
 import { getNetwork } from "./networks";
 import { MixinNativeOsmosisWallet, MixinNativeOsmosisWalletInfo } from "./osmosis";
+import { MixinNativeHighburyWallet, MixinNativeHighburyWalletInfo } from "./highbury";
 import { MixinNativeSecretWallet, MixinNativeSecretWalletInfo } from "./secret";
 import { MixinNativeTerraWallet, MixinNativeTerraWalletInfo } from "./terra";
 import { MixinNativeThorchainWallet, MixinNativeThorchainWalletInfo } from "./thorchain";
@@ -127,7 +128,9 @@ class NativeHDWalletInfo
               MixinNativeSecretWalletInfo(
                 MixinNativeTerraWalletInfo(
                   MixinNativeKavaWalletInfo(
-                    MixinNativeArkeoWalletInfo(MixinNativeOsmosisWalletInfo(NativeHDWalletBase))
+                    MixinNativeHighburyWalletInfo(
+                      MixinNativeArkeoWalletInfo(MixinNativeOsmosisWalletInfo(NativeHDWalletBase))
+					)
                   )
                 )
               )
@@ -175,6 +178,9 @@ class NativeHDWalletInfo
       case "kava":
       case "tkava":
         return core.kavaDescribePath(msg.path);
+      case "highbury":
+      case "fury":
+        return core.highburyDescribePath(msg.path);
       case "binance":
         return core.binanceDescribePath(msg.path);
       case "osmosis":
@@ -199,7 +205,9 @@ export class NativeHDWallet
             MixinNativeThorchainWallet(
               MixinNativeSecretWallet(
                 MixinNativeTerraWallet(
-                  MixinNativeKavaWallet(MixinNativeOsmosisWallet(MixinNativeArkeoWallet(NativeHDWalletInfo)))
+                  MixinNativeHighburyWallet(
+                    MixinNativeKavaWallet(MixinNativeOsmosisWallet(MixinNativeArkeoWallet(NativeHDWalletInfo)))
+                  )  
                 )
               )
             )
@@ -218,6 +226,7 @@ export class NativeHDWallet
     core.ThorchainWallet,
     core.SecretWallet,
     core.TerraWallet,
+    core.HighburyWallet,
     core.KavaWallet,
     core.ArkeoWallet
 {
@@ -236,6 +245,7 @@ export class NativeHDWallet
   readonly _supportsThorchain = true;
   readonly _supportsSecret = true;
   readonly _supportsTerra = true;
+  readonly _supportsHighbury = true;
   readonly _supportsKava = true;
   readonly _supportsArkeo = true;
   readonly _isNative = true;
@@ -329,6 +339,7 @@ export class NativeHDWallet
           super.thorchainInitializeWallet(masterKey),
           super.secretInitializeWallet(masterKey),
           super.terraInitializeWallet(masterKey),
+          super.highburyInitializeWallet(masterKey),
           super.kavaInitializeWallet(masterKey),
           super.arkeoInitializeWallet(masterKey),
         ]);
@@ -377,6 +388,7 @@ export class NativeHDWallet
     super.thorchainWipe();
     super.secretWipe();
     super.terraWipe();
+    super.highburyWipe();
     super.kavaWipe();
     super.arkeoWipe();
 

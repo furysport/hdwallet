@@ -1,13 +1,13 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as keepkey from "@shapeshiftoss/hdwallet-keepkey";
-import * as ledger from "@shapeshiftoss/hdwallet-ledger";
-import * as metamask from "@shapeshiftoss/hdwallet-metamask";
-import * as native from "@shapeshiftoss/hdwallet-native";
-import * as portis from "@shapeshiftoss/hdwallet-portis";
-import * as tallyHo from "@shapeshiftoss/hdwallet-tallyho";
-import * as trezor from "@shapeshiftoss/hdwallet-trezor";
-import * as walletconnect from "@shapeshiftoss/hdwallet-walletconnect";
-import * as xdefi from "@shapeshiftoss/hdwallet-xdefi";
+import * as core from "@sudophunk/hdwallet-core";
+import * as keepkey from "@sudophunk/hdwallet-keepkey";
+import * as ledger from "@sudophunk/hdwallet-ledger";
+import * as metamask from "@sudophunk/hdwallet-metamask";
+import * as native from "@sudophunk/hdwallet-native";
+import * as portis from "@sudophunk/hdwallet-portis";
+import * as tallyHo from "@sudophunk/hdwallet-tallyho";
+import * as trezor from "@sudophunk/hdwallet-trezor";
+import * as walletconnect from "@sudophunk/hdwallet-walletconnect";
+import * as xdefi from "@sudophunk/hdwallet-xdefi";
 
 import { binanceTests } from "./binance";
 import { btcTests } from "./bitcoin";
@@ -16,6 +16,7 @@ import { eosTests } from "./eos";
 import { ethTests } from "./ethereum";
 import { fioTests } from "./fio";
 import { kavaTests } from "./kava";
+import { highburyTests } from "./highbury";
 import { osmosisTests } from "./osmosis";
 import { rippleTests } from "./ripple";
 import { secretTests } from "./secret";
@@ -158,6 +159,14 @@ export function integration(suite: WalletSuite): void {
       });
 
       kavaTests(() => ({ wallet, info }));
+    });
+
+    describe("HighburyWallet", () => {
+      beforeAll(async () => {
+        wallet = await suite.createWallet("Highbury");
+      });
+
+      highburyTests(() => ({ wallet, info }));
     });
 
     describe("SelfTest", () => {

@@ -1,5 +1,5 @@
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 
 import { CoinbaseHDWallet } from "./coinbase";
 

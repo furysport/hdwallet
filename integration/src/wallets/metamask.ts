@@ -1,5 +1,5 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as metamask from "@shapeshiftoss/hdwallet-metamask";
+import * as core from "@sudophunk/hdwallet-core";
+import * as metamask from "@sudophunk/hdwallet-metamask";
 
 export function name(): string {
   return "MetaMask";

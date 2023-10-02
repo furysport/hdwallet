@@ -1,5 +1,5 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as trezor from "@shapeshiftoss/hdwallet-trezor";
+import * as core from "@sudophunk/hdwallet-core";
+import * as trezor from "@sudophunk/hdwallet-trezor";
 
 export class MockTransport extends trezor.TrezorTransport {
   memoized = new Map();

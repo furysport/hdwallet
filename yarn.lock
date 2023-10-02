@@ -4755,7 +4755,7 @@
     web-encoding "^1.1.0"
     wif "^2.0.6"
 
-"@shapeshiftoss/hdwallet-core@latest":
+"@sudophunk/hdwallet-core@latest":
   version "1.18.4"
   resolved "https://registry.yarnpkg.com/@shapeshiftoss/hdwallet-core/-/hdwallet-core-1.18.4.tgz#7272baa4b43de0fbb5e651d47cdeb9554f4ddd33"
   integrity sha512-dnzh6EmicNVb4AZPjN3d00z04SqLvKAUMqEhLq9v/rUtY7yb8dcvw5vHCnLEtq3a+N4UkH6rDA33i/hMjTBhUQ==
@@ -16778,7 +16778,7 @@ tendermint-tx-builder@^1.0.9:
     "@bithighlander/bitcoin-cash-js-lib" "^5.2.1"
     "@pioneer-platform/loggerdog" "^8.0.1"
     "@pioneer-platform/pioneer-coins" "^8.1.19"
-    "@shapeshiftoss/hdwallet-core" latest
+    "@sudophunk/hdwallet-core" latest
     "@types/node" "^15.0.2"
     bip39 "^3.0.4"
     codeclimate-test-reporter "^0.5.1"

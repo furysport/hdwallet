@@ -1,5 +1,5 @@
 {
-  "name": "@shapeshiftoss/hdwallet-xdefi",
+  "name": "@sudophunk/hdwallet-xdefi",
   "version": "1.50.4",
   "license": "MIT",
   "publishConfig": {
@@ -14,7 +14,7 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
-    "@shapeshiftoss/hdwallet-core": "1.50.4",
+    "@sudophunk/hdwallet-core": "1.50.4",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

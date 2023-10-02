@@ -1,5 +1,5 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import { AddEthereumChainParameter } from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
+import { AddEthereumChainParameter } from "@sudophunk/hdwallet-core";
 import isObject from "lodash/isObject";
 
 import * as eth from "./ethereum";

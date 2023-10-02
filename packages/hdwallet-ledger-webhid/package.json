@@ -1,5 +1,5 @@
 {
-  "name": "@shapeshiftoss/hdwallet-ledger-webhid",
+  "name": "@sudophunk/hdwallet-ledger-webhid",
   "version": "1.50.4",
   "license": "MIT",
   "publishConfig": {
@@ -19,8 +19,8 @@
     "@ledgerhq/hw-transport": "^6.7.0",
     "@ledgerhq/hw-transport-webhid": "^6.7.0",
     "@ledgerhq/live-common": "^21.8.2",
-    "@shapeshiftoss/hdwallet-core": "1.50.4",
-    "@shapeshiftoss/hdwallet-ledger": "1.50.4",
+    "@sudophunk/hdwallet-core": "1.50.4",
+    "@sudophunk/hdwallet-ledger": "1.50.4",
     "@types/w3c-web-hid": "^1.0.2",
     "typescript": "^4.3.2"
   },

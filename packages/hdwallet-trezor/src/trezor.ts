@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 import _ from "lodash";
 
 import * as Btc from "./bitcoin";
@@ -273,6 +273,7 @@ export class TrezorHDWallet implements core.HDWallet, core.BTCWallet, core.ETHWa
   readonly _supportsPolygon = false;
   readonly _supportsGnosis = false;
   readonly _supportsKavaInfo = true;
+  readonly _supportsHighburyInfo = true;
   readonly _supportsTerraInfo = true;
   readonly _isTrezor = true;
 

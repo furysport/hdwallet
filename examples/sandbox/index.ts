@@ -1,22 +1,22 @@
 import "regenerator-runtime/runtime";
 
-import * as coinbase from "@shapeshiftoss/hdwallet-coinbase";
-import { CoinbaseProviderConfig } from "@shapeshiftoss/hdwallet-coinbase";
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as keepkey from "@shapeshiftoss/hdwallet-keepkey";
-import * as keepkeyTcp from "@shapeshiftoss/hdwallet-keepkey-tcp";
-import * as keepkeyWebUSB from "@shapeshiftoss/hdwallet-keepkey-webusb";
-import * as keplr from "@shapeshiftoss/hdwallet-keplr";
-import * as ledgerWebHID from "@shapeshiftoss/hdwallet-ledger-webhid";
-import * as ledgerWebUSB from "@shapeshiftoss/hdwallet-ledger-webusb";
-import * as metaMask from "@shapeshiftoss/hdwallet-metamask";
-import * as native from "@shapeshiftoss/hdwallet-native";
-import * as portis from "@shapeshiftoss/hdwallet-portis";
-import * as tallyHo from "@shapeshiftoss/hdwallet-tallyho";
-import * as trezorConnect from "@shapeshiftoss/hdwallet-trezor-connect";
-import { WalletConnectProviderConfig } from "@shapeshiftoss/hdwallet-walletconnect";
-import * as walletConnect from "@shapeshiftoss/hdwallet-walletconnect";
-import * as xdefi from "@shapeshiftoss/hdwallet-xdefi";
+import * as coinbase from "@sudophunk/hdwallet-coinbase";
+import { CoinbaseProviderConfig } from "@sudophunk/hdwallet-coinbase";
+import * as core from "@sudophunk/hdwallet-core";
+import * as keepkey from "@sudophunk/hdwallet-keepkey";
+import * as keepkeyTcp from "@sudophunk/hdwallet-keepkey-tcp";
+import * as keepkeyWebUSB from "@sudophunk/hdwallet-keepkey-webusb";
+import * as keplr from "@sudophunk/hdwallet-keplr";
+import * as ledgerWebHID from "@sudophunk/hdwallet-ledger-webhid";
+import * as ledgerWebUSB from "@sudophunk/hdwallet-ledger-webusb";
+import * as metaMask from "@sudophunk/hdwallet-metamask";
+import * as native from "@sudophunk/hdwallet-native";
+import * as portis from "@sudophunk/hdwallet-portis";
+import * as tallyHo from "@sudophunk/hdwallet-tallyho";
+import * as trezorConnect from "@sudophunk/hdwallet-trezor-connect";
+import { WalletConnectProviderConfig } from "@sudophunk/hdwallet-walletconnect";
+import * as walletConnect from "@sudophunk/hdwallet-walletconnect";
+import * as xdefi from "@sudophunk/hdwallet-xdefi";
 import $ from "jquery";
 import Web3 from "web3";
 
@@ -115,7 +115,7 @@ const nativeAdapter = native.NativeAdapter.useKeyring(keyring);
 const trezorAdapter = trezorConnect.TrezorAdapter.useKeyring(keyring, {
   debug: false,
   manifest: {
-    email: "oss@shapeshiftoss.io",
+    email: "oss@sudophunk.io",
     appUrl: "https://shapeshift.com",
   },
 });

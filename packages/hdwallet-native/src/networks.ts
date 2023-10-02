@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 import * as bitcoin from "bitcoinjs-lib";
 
 import { BTCScriptType } from "./bitcoin";
@@ -168,6 +168,7 @@ for (const coin of [
   "secret",
   "terra",
   "kava",
+  "highbury",
   "cardano",
   "cosmos",
   "osmosis",

@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 import cloneDeep from "lodash/cloneDeep";
 
 import * as native from "./native";

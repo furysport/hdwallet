@@ -1,6 +1,6 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as ledger from "@shapeshiftoss/hdwallet-ledger";
-import * as portis from "@shapeshiftoss/hdwallet-portis";
+import * as core from "@sudophunk/hdwallet-core";
+import * as ledger from "@sudophunk/hdwallet-ledger";
+import * as portis from "@sudophunk/hdwallet-portis";
 
 const MNEMONIC12_ALLALL = "all all all all all all all all all all all all";
 

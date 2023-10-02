@@ -1,5 +1,5 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as walletconnect from "@shapeshiftoss/hdwallet-walletconnect";
+import * as core from "@sudophunk/hdwallet-core";
+import * as walletconnect from "@sudophunk/hdwallet-walletconnect";
 
 export function name(): string {
   return "WalletConnect";

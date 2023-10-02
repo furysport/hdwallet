@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 import { getMessage, TypedData } from "eip-712";
 import * as ethers from "ethers";
 

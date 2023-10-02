@@ -1,6 +1,6 @@
 import * as Messages from "@keepkey/device-protocol/lib/messages_pb";
 import * as Types from "@keepkey/device-protocol/lib/types_pb";
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 import _ from "lodash";
 import semver from "semver";
 
@@ -709,6 +709,8 @@ export class KeepKeyHDWallet implements core.HDWallet, core.BTCWallet, core.ETHW
   readonly _supportsSecret = false;
   readonly _supportsKava = false;
   readonly _supportsKavaInfo = false;
+  readonly _supportsHighbury = true;
+  readonly _supportsHighburyInfo = true;
   readonly _supportsTerra = false;
   readonly _supportsTerraInfo = false;
 

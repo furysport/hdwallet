@@ -1,5 +1,5 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as portis from "@shapeshiftoss/hdwallet-portis";
+import * as core from "@sudophunk/hdwallet-core";
+import * as portis from "@sudophunk/hdwallet-portis";
 
 export function name(): string {
   return "Portis";

@@ -1068,59 +1068,59 @@
     "@parcel/utils" "^1.11.0"
     physical-cpu-count "^2.0.0"
 
-"@shapeshiftoss/hdwallet-core@^1.9.0":
+"@sudophunk/hdwallet-core@^1.9.0":
   version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@shapeshiftoss/hdwallet-core/-/hdwallet-core-1.9.0.tgz#99b643a5978f10acbed9b986797ec8cf1d872346"
+  resolved "https://registry.yarnpkg.com/@sudophunk/hdwallet-core/-/hdwallet-core-1.9.0.tgz#99b643a5978f10acbed9b986797ec8cf1d872346"
   integrity sha512-OG0TXdCWEZ6lWYJpQm/rxAt0krNSBy1m8cEtxGrmR+py/qrTQU7wLpepMoU2ij5ZCqhlOIGMoP+B40OACOlVYg==
   dependencies:
     eventemitter2 "^5.0.1"
     lodash "^4.17.15"
     rxjs "^6.4.0"
 
-"@shapeshiftoss/hdwallet-keepkey-nodewebusb@^1.9.0":
+"@sudophunk/hdwallet-keepkey-nodewebusb@^1.9.0":
   version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@shapeshiftoss/hdwallet-keepkey-nodewebusb/-/hdwallet-keepkey-nodewebusb-1.9.0.tgz#74a2c76218b8bdb4a4c913d534a0b918e6c13df9"
+  resolved "https://registry.yarnpkg.com/@sudophunk/hdwallet-keepkey-nodewebusb/-/hdwallet-keepkey-nodewebusb-1.9.0.tgz#74a2c76218b8bdb4a4c913d534a0b918e6c13df9"
   integrity sha512-9MP5NfCuYZJ4MN43/q8klb+eQfTg9qMTMdJNBBBxNcwsbGlW7ozzv+4rbv88wx0GDOK179kgQopyf/y3X0X4kQ==
   dependencies:
     "@babel/polyfill" "^7.4.3"
-    "@shapeshiftoss/hdwallet-core" "^1.9.0"
-    "@shapeshiftoss/hdwallet-keepkey" "^1.9.0"
+    "@sudophunk/hdwallet-core" "^1.9.0"
+    "@sudophunk/hdwallet-keepkey" "^1.9.0"
     bytebuffer "^5.0.1"
     crypto "^1.0.1"
     eventemitter2 "^5.0.1"
   optionalDependencies:
     webusb "^1.1.1"
 
-"@shapeshiftoss/hdwallet-keepkey-tcp@^1.9.0":
+"@sudophunk/hdwallet-keepkey-tcp@^1.9.0":
   version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@shapeshiftoss/hdwallet-keepkey-tcp/-/hdwallet-keepkey-tcp-1.9.0.tgz#233f3f93ba6e8c210035953616c0f34c4eb2f49c"
+  resolved "https://registry.yarnpkg.com/@sudophunk/hdwallet-keepkey-tcp/-/hdwallet-keepkey-tcp-1.9.0.tgz#233f3f93ba6e8c210035953616c0f34c4eb2f49c"
   integrity sha512-u9hVS1I1rJysrcoFSMQRtoNoh+b81z9ff+ovsNyqtN9VHdLg3z2RthMMiG51q8WprTDA0eesEbd0P+c4YLvXAA==
   dependencies:
-    "@shapeshiftoss/hdwallet-core" "^1.9.0"
-    "@shapeshiftoss/hdwallet-keepkey" "^1.9.0"
+    "@sudophunk/hdwallet-core" "^1.9.0"
+    "@sudophunk/hdwallet-keepkey" "^1.9.0"
     axios "^0.18.0"
     bytebuffer "^5.0.1"
     eventemitter2 "^5.0.1"
 
-"@shapeshiftoss/hdwallet-keepkey@^1.9.0":
+"@sudophunk/hdwallet-keepkey@^1.9.0":
   version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@shapeshiftoss/hdwallet-keepkey/-/hdwallet-keepkey-1.9.0.tgz#5878b05c14d4c13c457833884a9f14c123cc4278"
+  resolved "https://registry.yarnpkg.com/@sudophunk/hdwallet-keepkey/-/hdwallet-keepkey-1.9.0.tgz#5878b05c14d4c13c457833884a9f14c123cc4278"
   integrity sha512-yvyvmO0dN3iSKDILkB8rWLFgT6Tz0zL62hDCjKvo1+cTIMgINGHNHhB3ZzHsTgcTFo2NXLR0ni3Qkq1LXdj5ng==
   dependencies:
     "@keepkey/device-protocol" "^6.4.1"
-    "@shapeshiftoss/hdwallet-core" "^1.9.0"
+    "@sudophunk/hdwallet-core" "^1.9.0"
     eip55 "^1.0.3"
     ethereumjs-tx "^1.3.7"
     eventemitter2 "^5.0.1"
     lodash "^4.17.15"
     semver "^6.3.0"
 
-"@shapeshiftoss/hdwallet-trezor@^1.9.0":
+"@sudophunk/hdwallet-trezor@^1.9.0":
   version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@shapeshiftoss/hdwallet-trezor/-/hdwallet-trezor-1.9.0.tgz#ee3fab63595f17cf3cd12806d2411e6c2a3835a7"
+  resolved "https://registry.yarnpkg.com/@sudophunk/hdwallet-trezor/-/hdwallet-trezor-1.9.0.tgz#ee3fab63595f17cf3cd12806d2411e6c2a3835a7"
   integrity sha512-asYZABXgu4gkbx22k+8qI/01hMNGEPwr5K220P2jVv/X0I51Zyl4ExeO5OYsQlJBpXFylcqUvkC51pasPA1D+Q==
   dependencies:
-    "@shapeshiftoss/hdwallet-core" "^1.9.0"
+    "@sudophunk/hdwallet-core" "^1.9.0"
     ethereumjs-tx "^1.3.7"
     eventemitter2 "^5.0.1"
     lodash "^4.17.15"

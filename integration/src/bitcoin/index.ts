@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 
 import { bitcoinTests } from "./bitcoin";
 import { litecoinTests } from "./litecoin";

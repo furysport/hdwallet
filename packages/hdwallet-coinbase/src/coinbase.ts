@@ -1,6 +1,6 @@
 import { CoinbaseWalletProvider } from "@coinbase/wallet-sdk";
-import * as core from "@shapeshiftoss/hdwallet-core";
-import { AddEthereumChainParameter } from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
+import { AddEthereumChainParameter } from "@sudophunk/hdwallet-core";
 import { ethErrors, serializeError } from "eth-rpc-errors";
 
 import * as eth from "./ethereum";
@@ -16,6 +16,7 @@ export class CoinbaseHDWalletInfo implements core.HDWalletInfo, core.ETHWalletIn
   readonly _supportsThorchainInfo = false;
   readonly _supportsSecretInfo = false;
   readonly _supportsKavaInfo = false;
+  readonly _supportsHighburyInfo = false;
   readonly _supportsTerraInfo = false;
 
   public getVendor(): string {
@@ -125,6 +126,8 @@ export class CoinbaseHDWallet implements core.HDWallet, core.ETHWallet {
   readonly _supportsSecret = false;
   readonly _supportsKava = false;
   readonly _supportsKavaInfo = false;
+  readonly _supportsHighbury = false;
+  readonly _supportsHighburyInfo = false;
   readonly _supportsTerra = false;
   readonly _supportsTerraInfo = false;
 

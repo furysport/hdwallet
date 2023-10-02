@@ -9,6 +9,7 @@ export * from "./ethereum";
 export * from "./event";
 export * from "./exceptions";
 export * from "./fio";
+export * from "./highbury";
 export * from "./kava";
 export * from "./keyring";
 export * from "./ripple";

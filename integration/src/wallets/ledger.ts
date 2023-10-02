@@ -1,5 +1,5 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as ledger from "@shapeshiftoss/hdwallet-ledger";
+import * as core from "@sudophunk/hdwallet-core";
+import * as ledger from "@sudophunk/hdwallet-ledger";
 
 export class MockTransport extends ledger.LedgerTransport {
   memoized = new Map();

@@ -1,5 +1,5 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import * as keepkey from "@shapeshiftoss/hdwallet-keepkey";
+import * as core from "@sudophunk/hdwallet-core";
+import * as keepkey from "@sudophunk/hdwallet-keepkey";
 import type { WebUSBDevice } from "usb";
 
 import { VENDOR_ID, WEBUSB_PRODUCT_ID } from "./utils";

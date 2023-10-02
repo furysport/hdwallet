@@ -1,5 +1,5 @@
 import * as bitcoin from "@shapeshiftoss/bitcoinjs-lib";
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 import * as bchAddr from "bchaddrjs";
 
 import * as Isolation from "./crypto/isolation";

@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 import { ethers } from "ethers";
 
 import { BTCScriptType } from "./bitcoin";

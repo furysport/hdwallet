@@ -1,5 +1,5 @@
 {
-  "name": "@shapeshiftoss/hdwallet-coinbase",
+  "name": "@sudophunk/hdwallet-coinbase",
   "version": "1.50.4",
   "license": "MIT",
   "publishConfig": {
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.6.6",
-    "@shapeshiftoss/hdwallet-core": "1.50.4",
+    "@sudophunk/hdwallet-core": "1.50.4",
     "eth-rpc-errors": "^4.0.3",
     "lodash": "^4.17.21"
   },

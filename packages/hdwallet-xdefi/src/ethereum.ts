@@ -1,5 +1,5 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import { ETHSignedMessage } from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
+import { ETHSignedMessage } from "@sudophunk/hdwallet-core";
 import * as ethers from "ethers";
 
 export async function ethVerifyMessage(msg: core.ETHVerifyMessage, ethereum: any): Promise<boolean | null> {

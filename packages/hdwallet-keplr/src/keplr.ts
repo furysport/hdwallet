@@ -1,10 +1,11 @@
 import { Window as KeplrWindow } from "@keplr-wallet/types";
 import { ChainReference } from "@shapeshiftoss/caip";
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@sudophunk/hdwallet-core";
 import isObject from "lodash/isObject";
 
 import * as cosmos from "./cosmos";
 import * as osmosis from "./osmosis";
+import * as highbury from "./highbury";
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -26,9 +27,10 @@ export function isKeplr(wallet: core.HDWallet): wallet is KeplrHDWallet {
   return isObject(wallet) && (wallet as any)._isKeplr;
 }
 
-export class KeplrHDWalletInfo implements core.HDWalletInfo, core.CosmosWalletInfo, core.OsmosisWalletInfo {
+export class KeplrHDWalletInfo implements core.HDWalletInfo, core.CosmosWalletInfo, core.OsmosisWalletInfo, core.HighburyWalletInfo {
   readonly _supportsCosmosInfo = true;
   readonly _supportsOsmosisInfo = true;
+  readonly _supportsHighburyInfo = true;
 
   public getVendor(): string {
     return "Keplr";
@@ -73,6 +75,8 @@ export class KeplrHDWalletInfo implements core.HDWalletInfo, core.CosmosWalletIn
         return cosmos.cosmosDescribePath(msg.path);
       case "Osmo":
         return osmosis.osmosisDescribePath(msg.path);
+      case "Fury":
+        return highbury.highburyDescribePath(msg.path);
       default:
         throw new Error("Unsupported path");
     }
@@ -120,21 +124,44 @@ export class KeplrHDWalletInfo implements core.HDWalletInfo, core.CosmosWalletIn
   public osmosisNextAccountPath(msg: core.OsmosisAccountPath): core.OsmosisAccountPath | undefined {
     return undefined;
   }
+  
+  public async highburySupportsNetwork(chainId = 459): Promise<boolean> {
+    return chainId === 459;
+  }
+
+  public async highburySupportsSecureTransfer(): Promise<boolean> {
+    return false;
+  }
+
+  public highburySupportsNativeShapeShift(): boolean {
+    return false;
+  }
+
+  public highburyGetAccountPaths(msg: core.HighburyGetAccountPaths): Array<core.HighburyAccountPath> {
+    return highbury.highburyGetAccountPaths(msg);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public highburyNextAccountPath(msg: core.HighburyAccountPath): core.HighburyAccountPath | undefined {
+    return undefined;
+  }
 }
 
-export class KeplrHDWallet implements core.HDWallet, core.CosmosWallet, core.OsmosisWallet {
+export class KeplrHDWallet implements core.HDWallet, core.CosmosWallet, core.OsmosisWallet, core.HighburyWallet {
   readonly _isKeplr = true;
   readonly _supportsCosmos = true;
   readonly _supportsCosmosInfo = true;
   readonly _supportsOsmosis = true;
   readonly _supportsOsmosisInfo = true;
+  readonly _supportsHighbury = true;
+  readonly _supportsHighburyInfo = true;
 
   transport: core.Transport = new KeplrTransport(new core.Keyring());
   info: KeplrHDWalletInfo & core.HDWalletInfo;
 
   initialized = false;
   provider: any = {};
-  supportedNetworks: ChainReference[] = [ChainReference.CosmosHubMainnet, ChainReference.OsmosisMainnet];
+  supportedNetworks: ChainReference[] = [ChainReference.CosmosHubMainnet, ChainReference.OsmosisMainnet, ChainReference.HighburyMainnet];
 
   constructor() {
     this.info = new KeplrHDWalletInfo();
@@ -331,6 +358,41 @@ export class KeplrHDWallet implements core.HDWallet, core.CosmosWallet, core.Osm
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public async cosmosSendTx(msg: core.CosmosSignTx): Promise<string | null> {
+    /** Broadcast from Keplr is currently unimplemented */
+    return null;
+  }
+
+  public async highburySupportsNetwork(chainId = 459): Promise<boolean> {
+    return chainId === 459;
+  }
+
+  public async highburySupportsSecureTransfer(): Promise<boolean> {
+    return false;
+  }
+
+  public highburySupportsNativeShapeShift(): boolean {
+    return false;
+  }
+
+  public highburyGetAccountPaths(msg: core.HighburyGetAccountPaths): Array<core.HighburyAccountPath> {
+    return highbury.highburyGetAccountPaths(msg);
+  }
+
+  public highburyNextAccountPath(msg: core.HighburyAccountPath): core.HighburyAccountPath | undefined {
+    return this.info.highburyNextAccountPath(msg);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public async highburyGetAddress(): Promise<string | null> {
+    return (await highbury.highburyGetAddress(this.provider)) || null;
+  }
+
+  public async highburySignTx(msg: core.HighburySignTx): Promise<core.HighburySignedTx | null> {
+    return highbury.highburySignTx(this.provider, msg);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public async highburySendTx(msg: core.HighburySignTx): Promise<string | null> {
     /** Broadcast from Keplr is currently unimplemented */
     return null;
   }
